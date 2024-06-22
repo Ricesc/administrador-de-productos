@@ -17,3 +17,9 @@ module.exports.getAllProducts = (req, res) => {
             res.json(err);
         });
 };
+
+module.exports.getOneProduct = (req, res) => {
+    Product.findOne({ _id: req.params.id })
+        .then((product) => res.json(product))
+        .catch((err) => res.json(err));
+};

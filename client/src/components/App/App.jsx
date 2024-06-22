@@ -1,12 +1,19 @@
-import ProductForm from "../ProductForm/ProductForm";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "../../views/Main";
+import OneProduct from "../OneProduct/OneProduct";
 
-const App = () => {
+function App() {
     return (
         <div className="App">
-            <ProductForm />
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<Main />} path="/" default />
+                    <Route element={<OneProduct />} path="/product/:id" />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
-};
+}
 
 export default App;
