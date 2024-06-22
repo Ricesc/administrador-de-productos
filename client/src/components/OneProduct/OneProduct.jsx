@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./OneProduct.css";
 
-const OneProduct = (props) => {
+const OneProduct = () => {
     const [product, setProduct] = useState({});
     const { id } = useParams();
 
@@ -16,7 +16,7 @@ const OneProduct = (props) => {
                 setProduct(res.data);
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [id]);
 
     return (
         <div className="oneProduct">
